@@ -1,8 +1,15 @@
-describe("test1",function(){
 
-    it("test1-1",function(){
+describe("GitHubAPIテスト",function(){
 
-        expect(1).toBe(1);
+    let main = require("../src/main.js");
+
+    main.getRepoList().then((data)=>{
+        console.log("data"+ data);
+    });
+
+    it("リポジトリ一覧取得",function(){
+
+        expect("200").toBe(main.getRepoList());
 
     });
 
