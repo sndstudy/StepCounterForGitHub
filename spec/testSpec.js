@@ -3,13 +3,12 @@ describe("GitHubAPIテスト",function(){
 
     let main = require("../src/main.js");
 
-    main.getRepoList().then((data)=>{
-        console.log("data"+ data);
-    });
+    it("リポジトリ一覧取得",(done)=>{
 
-    it("リポジトリ一覧取得",function(){
-
-        expect("200").toBe(main.getRepoList());
+        main.getRepoList().then((data)=>{
+            expect(200).toBe(data);
+            done();
+        });
 
     });
 

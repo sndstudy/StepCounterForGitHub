@@ -12,9 +12,7 @@ exports.getRepoList = function(){
         "headers": headers
     }
 
-    var ans = "300";
-
-    const test = ()=>{
+    const list = ()=>{
         return new Promise((resolve)=>{
             request(options,(err,res,body)=>{
                 resolve(res);
@@ -22,8 +20,7 @@ exports.getRepoList = function(){
         });
     } 
 
-    return test().then((res)=>{
-        console.log("A"+res.statusCode);
+    return list().then((res)=>{
         return res.statusCode;
     });
 
