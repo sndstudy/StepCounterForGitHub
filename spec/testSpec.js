@@ -6,7 +6,8 @@ describe("GitHubAPIテスト",function(){
     it("リポジトリ一覧取得",(done)=>{
 
         main.getRepoList().then((data)=>{
-            expect(200).toBe(data);
+            expect(200).toBe(data.statusCode);
+            expect(19).toBe((JSON.parse(data.body).length));
             done();
         });
 

@@ -20,8 +20,6 @@ exports.getRepoList = function(){
         });
     } 
 
-    return list().then((res)=>{
-        return res.statusCode;
-    });
+    return list();
 
 }
